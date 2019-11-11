@@ -30,19 +30,19 @@ public class Get
 	}
 	
 	@Test( dataProvider = "Data" )
-	public void ValidateData(String[] data)
+	public void ValidateData(String[][] data)
 	{
 		for(int i = 1 ; i <= 6 ; i++ )
 		{
-			Resp.then().assertThat().body("data["+(i-1)+"].id", equalTo(data[0])).
+			Resp.then().assertThat().body("data["+(i-1)+"].id", equalTo(Integer.parseInt(data[i][0]))).
 			and().
-			body("data["+(i-1)+"].email", equalTo(data[1])).
+			body("data["+(i-1)+"].email", equalTo(data[i][1])).
 			and().
-			body("data["+(i-1)+"].first_name", equalTo(data[2])).
+			body("data["+(i-1)+"].first_name", equalTo(data[i][2])).
 			and().
-			body("data["+(i-1)+"].last_name", equalTo(data[3])).
+			body("data["+(i-1)+"].last_name", equalTo(data[i][3])).
 			and().
-			body("data["+(i-1)+"].avatar", equalTo(data[4]));
+			body("data["+(i-1)+"].avatar", equalTo(data[i][4]));
 		}
 	}
 	
@@ -50,16 +50,16 @@ public class Get
 	public String[][] getData() throws IOException
 	{
 		Utils U = new Utils();
-		String[][] data = new String[5][6];
-		String dataFile = "C:\\Users\\Arpith\\eclipse-workspace\\API_PracticeData";
+		String[][] data = new String[6][5];
+		String dataFile = "C:\\Users\\Arpith\\eclipse-workspace\\API_Practice\\Data.xlsx";
 		
-		for( int i = 1 ; i <= 6 ; i++ )
+		for( int i = 0 ; i <= 5 ; i++ )
 		{
-			data[i][0] = U.readExcel(dataFile, "Users", i, 0);
-			data[i][1] = U.readExcel(dataFile, "Users", i, 1);
-			data[i][2] = U.readExcel(dataFile, "Users", i, 2);
-			data[i][3] = U.readExcel(dataFile, "Users", i, 3);
-			data[i][3] = U.readExcel(dataFile, "Users", i, 4);
+			data[i][0] = U.readExcel(dataFile, "Users", 7+i, 0);
+			data[i][1] = U.readExcel(dataFile, "Users", 7+i, 1);
+			data[i][2] = U.readExcel(dataFile, "Users", 7+i, 2);
+			data[i][3] = U.readExcel(dataFile, "Users", 7+i, 3);
+			data[i][4] = U.readExcel(dataFile, "Users", 7+i, 4);
 		}
 		
 		return data;

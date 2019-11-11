@@ -32,12 +32,12 @@ public class Utils
 		Cell C = S.getRow(Row).getCell(Cell);
 		
 		String Value = "";
-		int Val;
+		double Val;
 		
 		if( C.getCellType().equals(CellType.NUMERIC))
 		{
-			Val = (int)C.getNumericCellValue();
-			Value = String.valueOf(Val);
+			Val = C.getNumericCellValue();
+			Value = (Value+Val).replace(".0", "");
 		}
 		else if( C.getCellType().equals(CellType.STRING))
 			Value = C.getStringCellValue();

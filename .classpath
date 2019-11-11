@@ -19,7 +19,6 @@
 	<classpathentry kind="lib" path="D:/Download/Jars/rest-assured-4.1.2-dist/org.apache.sling.javax.activation-0.1.0.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/rest-assured-4.1.2-dist/rest-assured-4.1.2.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/rest-assured-4.1.2-dist/tagsoup-1.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/Download/Jars/testng-6.0/testng-6.0.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/json-path-4.1.2-dist/commons-lang3-3.4.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/json-path-4.1.2-dist/groovy-2.5.8.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/json-path-4.1.2-dist/groovy-json-2.5.8.jar"/>
@@ -54,5 +53,7 @@
 	<classpathentry kind="lib" path="D:/Download/Jars/poi-4.1.1/ooxml-lib/curvesapi-1.06.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/poi-4.1.1/ooxml-lib/xmlbeans-3.1.0.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Jars/json-simple-1.1.jar/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Download/Jars/testng-7.0.0/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="D:/Download/Jars/testng-7.0.0/testng-7.0.0-7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

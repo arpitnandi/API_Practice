@@ -8,7 +8,6 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class Test
@@ -29,21 +28,20 @@ public class Test
 		Utils U = new Utils();
 		String dataFile = "C:\\Users\\Arpith\\eclipse-workspace\\API_Practice\\Data.xlsx";
 		
-		for( int i = 1 ; i <= 6 ; i++ )
+		for( int i = 0 ; i <= 5 ; i++ )
 		{
-			JsonPath path = Resp.jsonPath();
 			Resp.
 			then().
 			assertThat().
-			body("data["+(i-1)+"].id", equalTo((Integer.parseInt(U.readExcel(dataFile, "Users", i, 0))))).
+			body("data["+i+"].id", equalTo((U.readExcel(dataFile, "Users", (i+7), 0)))).
 			and().
-			body("data["+(i-1)+"].email", equalTo(U.readExcel(dataFile, "Users", i, 1))).
+			body("data["+i+"].email", equalTo(U.readExcel(dataFile, "Users", (i+7), 1))).
 			and().
-			body("data["+(i-1)+"].first_name", equalTo(U.readExcel(dataFile, "Users", i, 2))).
+			body("data["+i+"].first_name", equalTo(U.readExcel(dataFile, "Users", (i+7), 2))).
 			and().
-			body("data["+(i-1)+"].last_name", equalTo(U.readExcel(dataFile, "Users", i, 3))).
+			body("data["+i+"].last_name", equalTo(U.readExcel(dataFile, "Users", (i+7), 3))).
 			and().
-			body("data["+(i-1)+"].avatar", equalTo(U.readExcel(dataFile, "Users", i, 4)));	
+			body("data["+i+"].avatar", equalTo(U.readExcel(dataFile, "Users", (i+7), 4)));	
 		}
 	}
 }
