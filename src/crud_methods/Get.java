@@ -14,7 +14,7 @@ import io.restassured.response.Response;
 
 public class Get
 {
-	Response Resp = given().when().get("https://reqres.in/api/users?page="+2);
+	public Response Resp = given().when().get("https://reqres.in/api/users?page="+2);
 	
 	@Test()
 	public void ValidateResponse()
@@ -32,17 +32,20 @@ public class Get
 	@Test( dataProvider = "Data" )
 	public void ValidateData(String[][] data)
 	{
-		for(int i = 1 ; i <= 6 ; i++ )
+		for(int i = 0 ; i <= 5 ; i++ )
 		{
-			Resp.then().assertThat().body("data["+(i-1)+"].id", equalTo(Integer.parseInt(data[i][0]))).
+			Resp.
+			then().
+			assertThat().
+			body("data["+i+"].id", equalTo(Integer.parseInt(data[i][0]))).
 			and().
-			body("data["+(i-1)+"].email", equalTo(data[i][1])).
+			body("data["+i+"].email", equalTo(data[i][1])).
 			and().
-			body("data["+(i-1)+"].first_name", equalTo(data[i][2])).
+			body("data["+i+"].first_name", equalTo(data[i][2])).
 			and().
-			body("data["+(i-1)+"].last_name", equalTo(data[i][3])).
+			body("data["+i+"].last_name", equalTo(data[i][3])).
 			and().
-			body("data["+(i-1)+"].avatar", equalTo(data[i][4]));
+			body("data["+i+"].avatar", equalTo(data[i][4]));
 		}
 	}
 	
@@ -51,7 +54,7 @@ public class Get
 	{
 		Utils U = new Utils();
 		String[][] data = new String[6][5];
-		String dataFile = "C:\\Users\\Arpith\\eclipse-workspace\\API_Practice\\Data.xlsx";
+		String dataFile = "C:\\Users\\Admin\\git\\API_Pratice.git\\Data.xlsx";
 		
 		for( int i = 0 ; i <= 5 ; i++ )
 		{
