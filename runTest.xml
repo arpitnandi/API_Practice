@@ -1,11 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Suite">
-  <test thread-count="5" name="Get Test">
+<suite name = "CRUD Operations" >
+
+  <!-- <test thread-count = "5" name = "Create Test" >
+    <classes>
+      <class name = "crud_operations.creatTest" />
+    </classes>
+  </test>
+  <test thread-count = "5" name = "Read Test" >
     <classes>
       <class name = "crud_operations.userTest1" />
       <class name = "crud_operations.userTest2" />
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+  <test thread-count = "5" name = "Update Test" >
+    <classes>
+      <class name = "crud_operations.editTest" />
+      <class name = "crud_operations.addTest" />
+    </classes>
+  </test>
+  <test thread-count = "5" name = "Delete Test" >
+    <classes>
+      <class name = "crud_operations.removeTest" />
+    </classes>
+  </test> --> -->
+  
+  <test thread-count = "5" name = "CRUD Test" >
+    <packages>
+      <package name = "crud_operations" />
+    </packages>
+  </test>
+
+</suite>
